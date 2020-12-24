@@ -10,7 +10,6 @@ import TabBarText from '../components/utils/TabBarText';
 
 import Plans from '../screens/Plans';
 import SecondScreen from '../screens/SecondScreen';
-import Lists from '../screens/Lists';
 import Targets from '../screens/Targets';
 import Nnew from '../screens/Nnew';
 import Login from '../screens/Login';
@@ -39,7 +38,7 @@ const MainTabs = () => {
 		<Tabs.Navigator
 			tabBarOptions={{
 				tabStyle: { borderTopWidth: 0 },
-				style: { borderTopWidth: 1, borderColor: '#c0c0c0', backgroundColor: '#EDBB99' },
+				style: { borderTopWidth: 0, borderColor: '#c0c0c0', backgroundColor: '#0F0F21' },
 				activeTintColor: Colors.primary,
 			}}
 		>
@@ -49,22 +48,10 @@ const MainTabs = () => {
 				component={Plans}
 				options={{
 					tabBarLabel: ({ focused }) => (
-						<TabBarText focused={focused} title="Planlar" />
+						<TabBarText focused={focused} title="Dizi/Film" />
 					),
 					tabBarIcon: ({ focused }) => (
-						<TabBarIcon focused={focused} icon={'md-home'} />
-					),
-				}}
-			/>
-			<Tabs.Screen
-				name="Lists"
-				component={Lists}
-				options={{
-					tabBarLabel: ({ focused }) => (
-						<TabBarText focused={focused} title="Listeler" />
-					),
-					tabBarIcon: ({ focused }) => (
-						<TabBarIcon focused={focused} icon={'ios-contact'} />
+						<TabBarIcon focused={focused} icon={'md-add'} />
 					),
 				}}
 			/>
@@ -73,10 +60,10 @@ const MainTabs = () => {
 				component={Targets}
 				options={{
 					tabBarLabel: ({ focused }) => (
-						<TabBarText focused={focused} title="Hayaller" />
+						<TabBarText focused={focused} title="Keşfet" />
 					),
 					tabBarIcon: ({ focused }) => (
-						<TabBarIcon focused={focused} icon={'ios-information-circle'} />
+						<TabBarIcon focused={focused} icon={'md-search'} />
 					),
 				}}
 			/>
