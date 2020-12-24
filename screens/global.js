@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#171D32'
+    backgroundColor: '#0F0F21'
   },
 
   content: {
@@ -22,7 +22,7 @@ export default styles = StyleSheet.create({
     position: 'absolute',
     width: 60,
     height: 60,
-    backgroundColor: '#0093FF',
+    backgroundColor: '#664B7C',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
@@ -40,7 +40,7 @@ export default styles = StyleSheet.create({
 
   modal: {
     flex: 1,
-    backgroundColor: '#171D32'
+    backgroundColor: '#664B7C'
   },
 
   modalHeader: {

@@ -17,7 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 
 import TaskList from '../components/TaskList';
-//import styles from './global';
+import styles from './global';
 import Layout from '../components/global/Layout';
 const AnimatableBtn =
   Animatable.createAnimatableComponent(TouchableOpacity);
@@ -80,7 +80,7 @@ export default function Nnew({ navigation }) {
   });
 
   return (
-	<Layout navigation={navigation} bold title="NoPaper">
+	<Layout navigation={navigation} bold title="İzlenecek Dizi/Film Listesi">
     <SafeAreaView style={styles.container}>
       <StatusBar
         backgroundColor="#171D32"
@@ -117,7 +117,7 @@ export default function Nnew({ navigation }) {
               />
             </TouchableOpacity>
 
-            <Text style={styles.modalTitle}>Yeni Görev Ekle</Text>
+            <Text style={styles.modalTitle}>Yeni Dizi/Film Ekle</Text>
           </View>
 
           <Animatable.View
@@ -127,7 +127,7 @@ export default function Nnew({ navigation }) {
           >
             <TextInput
               multiline={true}
-              placeholder="Bugün sırada hangi görev var?"
+              placeholder="Eklenecek diğer dizi ya da film ismi"
               placeholderTextColor="#737373"
               autoCorrect={false}
               style={styles.modalInput}
@@ -139,7 +139,7 @@ export default function Nnew({ navigation }) {
               style={styles.modalAddBtn}
               onPress={ handleAdd }
             >
-              <Text style={styles.modalAddText}>Kaydet</Text>
+              <Text style={styles.modalAddText}>Ekle</Text>
             </TouchableOpacity>
           </Animatable.View>
         </SafeAreaView>
