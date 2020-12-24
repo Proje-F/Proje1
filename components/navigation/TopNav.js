@@ -10,12 +10,12 @@ export default function (props) {
 			<View
 				style={{
 					paddingHorizontal: 20,
-					height: 50,
+					height: 70,
 					flexDirection: 'row',
 					justifyContent: 'space-between',
-					backgroundColor: '#171D32',
+					backgroundColor: '#0F0F21',
 					alignItems: 'center',
-					borderColor: '#17202A',
+					borderColor: '#0F0F21',
 					borderBottomWidth: 1.5,
 				}}
 			>
@@ -49,7 +49,7 @@ export default function (props) {
 						bold
 						style={{
 							color: Colors.topNavText,
-							fontSize: 16,
+							fontSize: 20,
 						}}
 					>
 						{props.title}
