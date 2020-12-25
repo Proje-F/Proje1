@@ -2,19 +2,15 @@ import { StyleSheet, Text, View, Image, ActivityIndicator, TouchableOpacity, Dim
 import React, {useRef, useState, useEffect} from 'react';
 import Carousel from 'react-native-anchor-carousel';
 import { FontAwesome5, Feather, MaterialIcons } from '@expo/vector-icons'
-
+import Plans from './Plans'
 
 const Targets = () => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch('https://api.collectapi.com/book/newBook', {
-          'headers': {
-          'content-type': 'application/json',
-          'authorization': 'apikey 32gOmx1qemnkDmPtzuntRT:3NpzdpdfUxQOPVXody6pdr'
-        }})
+        fetch('https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=NYOaIqGhVlM9LAW2vWTLMY5OvhLPGYwO')
           .then((response) => response.json())
-          .then((json) => setData(json.result))
+          .then((json) => setData(json.results.books))
           .catch((error) => console.error(error))
           .finally(() => setLoading(false));
     }, []);
@@ -22,10 +18,10 @@ const Targets = () => {
 
 const [background,setBackground] = useState({
     uri: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQA_-tL18_rj9zEcjN6n41NEaJm-kRNF9UeOtvksZ4z_OW6jRA9',
-    name: 'Kitapları Keşfet!',
+    name: 'Kitapları Keşfet !',
     //stat: '2019 ‧ Action/Sci-fi ‧ 3h 2m',
     soz: '"Bir kitap, içinizdeki donmuş değerleri parçalayarak bir balta olmalıdır.\n FRANZ KAFKA"',
-    desc: 'Yukarıdaki kitap çeşitlerinden dilediğini seçerek kitap adı, fiyatı, yazar ve yayın bilgisini öğrenebilirsin. Beğenirsen eğer Kitap Ekle menüsünden okunacak kitaplar listene eklemede bulunabilirsin.'
+    desc: 'Yukarıdaki kitap çeşitlerinden dilediğini seçerek kitabın adını, yazar bilgisini ve açıklamasını öğrenebilirsin. Beğendiklerin olursa listene eklemeyi unutma! ;)'
 })
 const carouselRef = useRef(null);
 
@@ -41,17 +37,17 @@ const renderItem = ({item, index}) => {
                 onPress={() =>{   
                     carouselRef.current.scrollToIndex(index);
                     setBackground({
-                    //uri: item.image,
                     name: item.title,
-                    stat: item.yayın,
-                    desc: item.yazar
+                    stat: item.publish,
+                    au: item.author,
+                    desc: item.description
                     })
                 }
                 }
             >
-                <Image source={{uri: item.image}} style={styles.carouselImage} />
+                <Image source={{uri: item.book_image}} style={styles.carouselImage} />
                 <Text style={styles.carouselText}>{item.title}</Text>
-                <MaterialIcons name='library-add' size={30} color='white' style={styles.carouselIcon} />
+               
             </TouchableOpacity>
 
         </View>
@@ -66,9 +62,9 @@ return (
         <StatusBar backgroundColor='#000' barStyle='light-content' />
 
         <View style={styles.carouselContentContainer}>
-            <View style={{...StyleSheet.absoluteFill, backgroundColor: 'rgba(102, 75, 124,0.9)'}}>
+            <View style={{...StyleSheet.absoluteFill, backgroundColor: '#0F0F21'}}>
                 <ImageBackground source={{ uri: background.uri }} style={styles.ImageBg} blurRadius={10}>
-                <Text style={{color: 'white', fontSize: 24, fontWeight: 'bold', marginLeft: 10, marginVertical: 10, paddingTop:15 }}>BU HAFTANIN KİTAPLARI</Text>
+                <Text style={{color: '#FFECB3', fontSize: 24, fontWeight: 'bold', marginLeft: 10, marginVertical: 10, paddingTop:15 }}>Senin için Seçtiklerimiz:</Text>
                 <View style={styles.carouselContainerView}>
                     <Carousel style={styles.carousel}
                         data={data}
@@ -78,8 +74,6 @@ return (
                         separatorWidth={0}
                         ref={carouselRef}
                         inActiveOpacity={0.4}
-                        //pagingEnable={false}
-                        //minScrollDistance={20}
                     />
                 </View>
 
@@ -89,11 +83,14 @@ return (
                         <Text style={styles.movieName}>{background.name}</Text>
                     </View>
                 </View>
-                <View style={{paddingHorizontal: 14, marginTop: 14}}>
+                <View style={{paddingHorizontal: 14, marginTop: 5}}>
                     <Text style={{color: 'white', opacity: 0.8, lineHeight: 20}}>
-                    {background.soz}
+                    {background.soz} 
                     </Text>
-                    <Text style={{color: 'white', opacity: 0.8, lineHeight: 20, marginTop:15}}>
+                    <Text style={{color: 'white', opacity: 0.8, lineHeight: 20}}>
+                    {background.au}
+                    </Text>
+                    <Text style={{color: 'white', opacity: 0.8, lineHeight: 30, marginTop:15, fontSize:20}}>
                     {background.desc}
                     </Text>
                     

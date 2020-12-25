@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Colors from '../../constants/colors';
-import TopNav from '../navigation/TopNav';
+import TopNav from '../../navigation/TopNav';
 import Text from '../utils/UbuntuFont';
 export default function (props) {
 	return (
@@ -14,7 +14,6 @@ export default function (props) {
 					withBack={props.withBack ? true : false}
 				/>
 			)}
-			{/* this text using ubuntu font */}
 			{props.children}
 		</View>
 	);

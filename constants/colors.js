@@ -1,9 +1,9 @@
-const background = '#171D32';
+const background = '#34495E';
 const statusBar = '#FFF';
-const primary = '#171D32';
-const topNavText = '#664B7C';
+const primary = '#FFECB3';
+const topNavText = '#B388FF';
 const inActiveTab = 'rgb(143, 155, 179)';
-const ActiveTab = '#664B7C';
+const ActiveTab = '#B388FF';
 export default {
 	background,
 	primary,

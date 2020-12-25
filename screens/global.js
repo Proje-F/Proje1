@@ -49,11 +49,18 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
+  ImageBg: {
+    flex: 1,
+    height: null,
+    width: null,
+    opacity: 1,
+    justifyContent: 'flex-start'
+  },
 
   modalTitle: {
     marginLeft: 10,
     fontSize: 20,
-    color: "#FFF"
+    color: "#E9DADA"
   },
 
   modalBody: {
@@ -74,7 +81,7 @@ export default styles = StyleSheet.create({
   },
 
   modalAddBtn: {
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#f0ffee',
     marginTop: 10,
     height: 40,
     alignItems: 'center',
@@ -86,6 +93,6 @@ export default styles = StyleSheet.create({
 
   modalAddText: {
     fontSize: 20,
-    color: '#131313'
+    color: '#5a5966'
   }
 });

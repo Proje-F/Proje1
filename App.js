@@ -16,28 +16,8 @@ import {
 	Ubuntu_700Bold,
 	Ubuntu_700Bold_Italic,
 } from '@expo-google-fonts/ubuntu';
-import AppNavigator from './navigation/AppNavigator';
 import Main from './navigation/AppNavigator';
 import Colors from './constants/colors';
-import Login from './screens/Login';
-import { createDrawerNavigator } from 'react-navigation-drawer';
-import { createAppContainer } from 'react-navigation';
-const DrawerNavigator =createDrawerNavigator({
-	Home:{
-		screen:Main,
-	},
-	KayıtOl:{
-		screen:Login,
-	},
-},{
-	//initialRouteName: 'Home',
-	// contentComponent: CustomDrawerContentComponent,
-	drawerPosition: 'left',
-	drawerOpenRoute: 'DrawerOpen',
-	drawerCloseRoute: 'DrawerClose',
-	drawerToggleRoute: 'DrawerToggle' 
-})
-const App2=createAppContainer(DrawerNavigator)
 
 export default function App(props) {
 	const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -58,14 +38,13 @@ export default function App(props) {
 					translucent
 					backgroundColor={Colors.statusBar}
 				/>
-				<App2 />
+				<Main />
 			</SafeAreaView>
 		);
 	}
 }
 
 async function loadResourcesAsync() {
-	// load all resources such as images, fonts, etc.
 	await Promise.all([
 		Asset.loadAsync([
 			require('./assets/icon.png'),
@@ -85,8 +64,6 @@ async function loadResourcesAsync() {
 }
 
 function handleLoadingError(error) {
-	// In this case, you might want to report the error to your error reporting
-	// service, for example Sentry
 	console.warn(error);
 }
 

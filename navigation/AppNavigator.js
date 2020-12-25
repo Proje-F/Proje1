@@ -2,17 +2,12 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator } from 'react-navigation-drawer';
-
 import Colors from '../constants/colors';
 import TabBarIcon from '../components/utils/TabBarIcon';
 import TabBarText from '../components/utils/TabBarText';
 
 import Plans from '../screens/Plans';
-import SecondScreen from '../screens/SecondScreen';
 import Targets from '../screens/Targets';
-import Nnew from '../screens/Nnew';
-import Login from '../screens/Login';
 
 const MainStack = createStackNavigator();
 const Main = () => {
@@ -24,9 +19,6 @@ const Main = () => {
 			}}
 		>
 			<MainStack.Screen name="MainTabs" component={MainTabs} />
-			<MainStack.Screen name="SecondScreen" component={SecondScreen} />
-			<MainStack.Screen name="Nnew" component={Nnew} />
-			<MainStack.Screen name="Login" component={Login} />
 
 		</MainStack.Navigator>
 	);
@@ -48,7 +40,7 @@ const MainTabs = () => {
 				component={Plans}
 				options={{
 					tabBarLabel: ({ focused }) => (
-						<TabBarText focused={focused} title="Dizi/Film" />
+						<TabBarText focused={focused} title="Kitap" />
 					),
 					tabBarIcon: ({ focused }) => (
 						<TabBarIcon focused={focused} icon={'md-add'} />

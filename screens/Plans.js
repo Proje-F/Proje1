@@ -9,35 +9,26 @@ import
     TouchableOpacity,
     FlatList,
     Modal,
+    Image,
+    ImageBackground,
     TextInput,
     AsyncStorage
   } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
-
 import TaskList from '../components/TaskList';
 import styles from './global';
 import Layout from '../components/global/Layout';
+
 const AnimatableBtn =
   Animatable.createAnimatableComponent(TouchableOpacity);
 
-export default function Nnew({ navigation }) {
-  /* Dados estáticos
-  const [task, setTask] = useState([
-    { key: 1, task: 'Pagar conta de luz' },
-    { key: 2, task: 'Pagar conta de água' },
-    { key: 3, task: 'Agendar consulta oftalmo' },
-    { key: 4, task: 'Pagar conta escola de inglês' },
-    { key: 5, task: 'Agendar consulta cardio' }
-  ]);
-  */
-
+export default function Plans({ navigation }) {
   const [task, setTask] = useState([]);
   const [visible, setVisible] = useState(false);
   const [input, setInput] = useState('');
 
-  // Obtendo todas as tarefas ao iniciar o app
   useEffect(() => {
     async function loadTasks() {
       const taskStorage = await AsyncStorage.getItem('@task');
@@ -50,7 +41,6 @@ export default function Nnew({ navigation }) {
     loadTasks();
   }, []);
 
-  // Monitorar tasks, para salvar tarefas que foram alteradas
   useEffect(() => {
     async function saveTasks(){
       await AsyncStorage.setItem('@task', JSON.stringify(task));
@@ -73,14 +63,13 @@ export default function Nnew({ navigation }) {
   }
 
   const handleDelete = useCallback((data) => {
-    // Filtrar e retornar todos os itens com exceção do clicado
     const find = task.filter(result => result.key !== data.key);
 
     setTask(find);
   });
 
   return (
-	<Layout navigation={navigation} bold title="İzlenecek Dizi/Film Listesi">
+	<Layout navigation={navigation} bold title="Okunacak Kitap Listesi">
     <SafeAreaView style={styles.container}>
       <StatusBar
         backgroundColor="#171D32"
@@ -98,8 +87,6 @@ export default function Nnew({ navigation }) {
           />
         }
       />
-
-      {/* Modal -- Adicionar nova tarefa */}
       <Modal
         animationType="slide"
         transparent={false}
@@ -113,11 +100,11 @@ export default function Nnew({ navigation }) {
                 style={{marginLeft: 5, marginRight: 5}}
                 name="md-arrow-back"
                 size={30}
-                color="#FFF"
+                color="#FAFAFA"
               />
             </TouchableOpacity>
 
-            <Text style={styles.modalTitle}>Yeni Dizi/Film Ekle</Text>
+            <Text style={styles.modalTitle}>Yeni Kitap Ekle</Text>
           </View>
 
           <Animatable.View
@@ -127,7 +114,7 @@ export default function Nnew({ navigation }) {
           >
             <TextInput
               multiline={true}
-              placeholder="Eklenecek diğer dizi ya da film ismi"
+              placeholder="Eklenecek diğer kitap ismi"
               placeholderTextColor="#737373"
               autoCorrect={false}
               style={styles.modalInput}
@@ -143,6 +130,7 @@ export default function Nnew({ navigation }) {
             </TouchableOpacity>
           </Animatable.View>
         </SafeAreaView>
+
       </Modal>
 
       <AnimatableBtn
