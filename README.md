@@ -1,4 +1,7 @@
 # Proje
 React Native expo ile dizi film listesi yapan ve dizi film API kullanan bir uygulama
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=kfTjgaX128w&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=kfTjgaX128w&feature=youtu.be)
-
+[<img align="left" alt="Gatsby" width="230px" src="./resim/1.jpg" />]
+[<img align="left" alt="Gatsby" width="230px" src="./resim/1'1.jpg" />]
+[<img align="left" alt="Gatsby" width="230px" src="./resim/1-.jpg" />]
+[<img align="left" alt="Gatsby" width="230px" src="./resim/2.jpg" />]
+[<img align="left" alt="Gatsby" width="230px" src="./resim/2_1.jpg" />]
