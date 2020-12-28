@@ -24,7 +24,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
+<<<<<<< Updated upstream
       "package": "com.pickabook.pickabook"
+=======
+<<<<<<< HEAD
+      "package": "com.dka.pickabook"
+=======
+      "package": "com.pickabook.pickabook"
+>>>>>>> 7b7deff832276cb361aba8881f73fa8385a06233
+>>>>>>> Stashed changes
     },
     "web": {
       "favicon": "./assets/favicon.png"
