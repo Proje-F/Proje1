@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import Text from '../components/utils/UbuntuFont';
 import Colors from '../constants/colors';
-import { Ionicons } from '@expo/vector-icons';
+
 
 export default function (props) {
 	return (
@@ -30,7 +30,6 @@ export default function (props) {
 							justifyContent: 'center',
 						}}
 					>
-						<Ionicons name="ios-arrow-back" size={24} color="#000" />
 					</TouchableOpacity>
 				) : (
 					<View style={{ flex: 1, alignItems: 'flex-start' }} />

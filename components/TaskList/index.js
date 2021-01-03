@@ -2,8 +2,11 @@ import React from 'react';
 import { View, TouchableOpacity, Text }
   from 'react-native';
 
-import { Ionicons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
+import
+  {
+    Image,
+  } from 'react-native';
 
 import styles from './styles';
 
@@ -16,11 +19,14 @@ export default function TaskList({ data, handleDelete }) {
       duration={1500}
     >
       <TouchableOpacity onPress={() => handleDelete(data)}>
-        <Ionicons
+        {/* <Ionicons
           name="md-checkmark-circle"
           size={30}
           color="#6ab202"
-        />
+        /> */}
+        <Image
+          source={require('../../assets/check.png')}
+        /> 
       </TouchableOpacity>
 
       <View>

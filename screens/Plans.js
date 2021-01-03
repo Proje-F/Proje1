@@ -15,7 +15,6 @@ import
     AsyncStorage
   } from 'react-native';
 
-import { Ionicons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 import TaskList from '../components/TaskList';
 import styles from './global';
@@ -96,12 +95,15 @@ export default function Plans({ navigation }) {
         <SafeAreaView style={styles.modal}>
           <View style={styles.modalHeader}>
             <TouchableOpacity onPress={() => setVisible(false)}>
-              <Ionicons
+              {/* <Ionicons
                 style={{marginLeft: 5, marginRight: 5}}
                 name="md-arrow-back"
                 size={30}
                 color="#FAFAFA"
-              />
+              /> */}
+              <Image
+                source={require('../assets/arrow.png')}
+              /> 
             </TouchableOpacity>
 
             <Text style={styles.modalTitle}>Yeni Kitap Ekle</Text>
@@ -140,11 +142,14 @@ export default function Plans({ navigation }) {
         duration={2000}
         onPress={() => setVisible(true)}
       >
-        <Ionicons
+        {/* <Ionicons
           name="ios-add"
           size={35}
           color="#FFF"
-        />
+        /> */}
+        <Image
+          source={require('../assets/plus.png')}
+        /> 
       </AnimatableBtn>
     </SafeAreaView>
 	</Layout>

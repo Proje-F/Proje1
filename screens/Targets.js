@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Image, ActivityIndicator, TouchableOpacity, Dimensions, StatusBar, ScrollView, ImageBackground, TextInput, TouchableWithoutFeedback, FlatList} from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Carousel from 'react-native-anchor-carousel';
-import { FontAwesome5, Feather, MaterialIcons } from '@expo/vector-icons'
 import Plans from './Plans'
 
 const Targets = () => {

@@ -5,7 +5,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Colors from '../constants/colors';
 import TabBarIcon from '../components/utils/TabBarIcon';
 import TabBarText from '../components/utils/TabBarText';
-
+import
+  {
+    Image,
+  } from 'react-native';
 import Plans from '../screens/Plans';
 import Targets from '../screens/Targets';
 
@@ -34,7 +37,6 @@ const MainTabs = () => {
 				activeTintColor: Colors.primary,
 			}}
 		>
-			{/* these icons using Ionicons */}
 			<Tabs.Screen
 				name="Plans"
 				component={Plans}
@@ -43,7 +45,11 @@ const MainTabs = () => {
 						<TabBarText focused={focused} title="Kitap" />
 					),
 					tabBarIcon: ({ focused }) => (
-						<TabBarIcon focused={focused} icon={'md-add'} />
+						// <TabBarIcon focused={focused} icon={'md-add'} />
+						<Image
+                		// style={styles.stretch}
+                		source={require('../assets/32.png')}
+              		/> 
 					),
 				}}
 			/>
@@ -54,9 +60,14 @@ const MainTabs = () => {
 					tabBarLabel: ({ focused }) => (
 						<TabBarText focused={focused} title="Keşfet" />
 					),
+					
 					tabBarIcon: ({ focused }) => (
-						<TabBarIcon focused={focused} icon={'md-search'} />
-					),
+					// 	<TabBarIcon focused={focused} icon={'md-search'} />
+					<Image
+                		// style={styles.stretch}
+                		source={require('../assets/search.png')}
+              		/> 
+					 ),
 				}}
 			/>
 			
